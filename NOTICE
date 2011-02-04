@@ -1,0 +1,40 @@
+This is a Derivative Work of the Shibboleth IdP 2.2.1, which is licensed
+under the Apache License, Version 2.0 :
+
+/*
+ * Copyright 2006 University Corporation for Advanced Internet Development, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+All files with Derivative Work is, in accordance with the License,
+properly marked as such (4. Redistribution, bullet 2).
+
+The Derivative Work itself is again licensed under the Apache License,
+Version 2.0 by Yubico AB :
+
+  Copyright 2011 Yubico AB
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+

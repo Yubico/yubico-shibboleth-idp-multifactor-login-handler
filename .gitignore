@@ -1,0 +1,6 @@
+target/*
+*~
+.*~
+\#*
+.settings/org.maven.ide.eclipse.prefs
+target
