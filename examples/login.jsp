@@ -54,7 +54,7 @@
 				    </tr>
 				<% } %>
 				<tr>
-					<td colspan="2"><input type="submit" value="Login" tabindex="3" /></td>
+					<td colspan="2"><input type="submit" value="Login" tabindex="9" /></td>
 				</tr>
 			</table>
 			</form>
