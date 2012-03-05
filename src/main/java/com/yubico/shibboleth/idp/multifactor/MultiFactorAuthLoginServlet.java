@@ -71,6 +71,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.opensaml.xml.util.DatatypeHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -91,6 +92,9 @@ public class MultiFactorAuthLoginServlet extends HttpServlet {
 
     /** Class logger. */
     private final Logger log = LoggerFactory.getLogger(MultiFactorAuthLoginServlet.class);
+    
+    /** The authentication method returned to the authentication engine. */
+    private String authenticationMethod;
 
     /** Name of JAAS configuration used to authenticate users. */
     private String jaasConfigName = "ShibUserPassAuth";
@@ -129,6 +133,14 @@ public class MultiFactorAuthLoginServlet extends HttpServlet {
         }
         if (!loginPage.startsWith("/")) {
             loginPage = "/" + loginPage;
+        }
+        
+        String method =
+                DatatypeHelper.safeTrimOrNullString(config.getInitParameter(LoginHandler.AUTHENTICATION_METHOD_KEY));
+        if (method != null) {
+            authenticationMethod = method;
+        } else {
+            authenticationMethod = "urn:oasis:names:tc:SAML:2.0:ac:classes:Token";
         }
     }
 
@@ -237,6 +249,7 @@ public class MultiFactorAuthLoginServlet extends HttpServlet {
 
             Subject userSubject = new Subject(false, principals, publicCredentials, privateCredentials);
             request.setAttribute(LoginHandler.SUBJECT_KEY, userSubject);
+            request.setAttribute(LoginHandler.AUTHENTICATION_METHOD_KEY, authenticationMethod);
         } catch (LoginException e) {
             log.debug("User authentication for " + username + " failed", e);
             throw e;
