@@ -61,7 +61,7 @@ import edu.internet2.middleware.shibboleth.idp.config.profile.authn.AbstractLogi
 public class MultiFactorAuthLoginHandlerBeanDefinitionParser extends AbstractLoginHandlerBeanDefinitionParser {
 
     /** Schema type. */
-    public static final QName SCHEMA_TYPE = new QName(ProfileHandlerNamespaceHandler.NAMESPACE, "MultiFactorAuth");
+    public static final QName SCHEMA_TYPE = new QName(MultiFactorAuthLoginHandlerNamespaceHandler.NAMESPACE, "MultiFactorAuth");
 
     /** Class logger. */
     private final Logger log = LoggerFactory.getLogger(MultiFactorAuthLoginHandlerBeanDefinitionParser.class);

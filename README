@@ -1,1 +1,36 @@
 MultiFactor Login Handler for use with the Shibboleth IdP.
+
+See https://spaces.internet2.edu/display/SHIB2/Multi+Factor+Login+Handler
+( or https://spaces.internet2.edu/x/FQFvAQ ) for installation instructions.
+
+This version has been tested with Shibboleth IdP 2.2.1 and with the
+JAAS modules from yubico-validation-client 2.0-pre1-shib.
+
+What is special with this Login Handler? Two things :
+
+  1) It collects multiple authentication factors from the login servlet.
+
+     Besides the j_username and j_password collected by the regular
+     UsernamePassword login handler, we also collect
+     j_tokens[0] .. j_tokens[n].
+
+     See MultiFactorAuthLoginServlet.service().
+
+  2) We convey all these collected factors to JAAS modules by calling the
+     JAAS modules PasswordCallback.setPassword() muliple times, with
+     j_password coming last (to provide some compatibility with single-
+     factor JAAS modules).
+
+     If the JAAS module wants to get more than the first factor, it must
+     pass us a PasswordCallback capable of accumulating factors in
+     setPassword().
+
+     See MultiAuthCallbackHandler.handle().
+
+See com.yubico.jaas.MultiValuePasswordCallback for an example of a multi-
+factor capable PasswordCallback.
+
+Currently known Multi Factor JAAS modules :
+
+  com.yubico.jaas.YubikeyLoginModule	  for YubiKey OTPs
+  com.yubico.jaas.HttpOathOtpLoginModule  for OATH token validations
