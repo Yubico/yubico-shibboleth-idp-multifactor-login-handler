@@ -28,18 +28,43 @@
 
     <repositories>
         <repository>
-            <id>shibboleth.internet2.edu</id>
-            <name>Internet2</name>
+            <id>shibboleth.net.releases</id>
+            <name>shibboleth</name>
             <layout>default</layout>
-            <url>http://shibboleth.internet2.edu/downloads/maven2</url>
+            <url>https://build.shibboleth.net/nexus/content/repositories/releases</url>
             <releases>
-            	<updatePolicy>always</updatePolicy>
+                <updatePolicy>always</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>shibboleth.net.public</id>
+            <name>shibboleth</name>
+            <layout>default</layout>
+            <url>https://build.shibboleth.net/nexus/content/repositories/public</url>
+            <releases>
+                <updatePolicy>always</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>shibboleth.net.thirdparty</id>
+            <name>shibboleth</name>
+            <layout>default</layout>
+            <url>https://build.shibboleth.net/nexus/content/repositories/thirdparty</url>
+            <releases>
+                <updatePolicy>always</updatePolicy>
             </releases>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
         </repository>
     </repositories>
+
     <dependencies>
     	<dependency>
     		<groupId>javax.servlet</groupId>
@@ -52,7 +77,7 @@
         <dependency>
             <groupId>edu.internet2.middleware</groupId>
             <artifactId>shibboleth-identityprovider</artifactId>
-            <version>2.2.1</version>
+            <version>2.4.0</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
