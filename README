@@ -1,10 +1,10 @@
 MultiFactor Login Handler for use with the Shibboleth IdP.
 
-See https://spaces.internet2.edu/display/SHIB2/Multi+Factor+Login+Handler
-( or https://spaces.internet2.edu/x/FQFvAQ ) for installation instructions.
+See https://wiki.shibboleth.net/confluence/display/SHIB2/Multi+Factor+Login+Handler
+( or https://wiki.shibboleth.net/confluence/x/aYBC ) for installation instructions.
 
-This version has been tested with Shibboleth IdP 2.2.1 and with the
-JAAS modules from yubico-validation-client 2.0-pre1-shib.
+This version has been successfully tested with Shibboleth IdP versions 2.2.1
+and 2.4.0, using the JAAS modules from yubico-validation-client 2.0.2-SNAPSHOT.
 
 What is special with this Login Handler? Two things :
 
