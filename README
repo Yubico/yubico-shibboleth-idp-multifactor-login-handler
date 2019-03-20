@@ -1,5 +1,7 @@
 MultiFactor Login Handler for use with the Shibboleth IdP.
 
+NOTE: This project is deprecated and is no longer being maintained.
+
 See https://wiki.shibboleth.net/confluence/display/SHIB2/Multi+Factor+Login+Handler
 ( or https://wiki.shibboleth.net/confluence/x/aYBC ) for installation instructions.
 
